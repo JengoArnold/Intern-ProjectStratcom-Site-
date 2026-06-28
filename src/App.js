@@ -8,7 +8,9 @@ import Footer from './Footer';
 import Home from './Home'
 import Login from './Login';
 import Signup from './Signup';
+
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Dashboard from './Dashboard';
 function App() {
   return (
     <div className="App">
@@ -19,22 +21,27 @@ function App() {
                    <Route path="/*" element={
                     <>
                       <Header/> 
+
                       <Routes>
                            <Route path='/' element={<Home/>}/>
                            <Route path='/about' element={<AboutUs/>}/>
                            <Route path='/services' element={<Services/>}/>
                            <Route path='/about' element={<AboutUs/>}/>
-                            <Route path='/login' element={<Login/>}/>
-                            <Route path='/signup' element={<Signup/>}/>
+        
                       </Routes>
+                      <Footer/>
                     </>
-                   } />  
+                   } /> 
+                     <Route path='/login' element={<Login/>}/>
+                            <Route path='/signup' element={<Signup/>}/>
+                            
+                     <Route path='/dashboard' element={<Dashboard/>}/>
                 </Routes>
             </Router>
                     
               {/* <Login/>
               <Signup/> */}
-             <Footer/> 
+              
     </div>
 
 
